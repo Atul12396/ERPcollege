@@ -1,0 +1,164 @@
+
+.container {
+  max-width: 1000px;
+  margin: 50px; 
+  margin-left: 150px; 
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    color: black;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    color: black;
+    background-color: rgb(228, 228, 228);
+    text-align: left;
+    font-size: 18px;
+    border-radius: 5px;
+}
+/* Apply zebra stripes */
+tr:nth-child(even) {
+    background-color: rgb(232, 232, 232);
+}
+/* Add horizontal dividers */
+tr {
+    border-bottom: 1px solid #ddd;
+
+}
+/* Hover effect 
+tr:hover {
+    background-color: #eaf1f1;
+}*/
+
+.row-header {
+    color: white; /* Dark blue color */
+    font-size: 25px; /* Adjust font size as needed */
+    margin-bottom: 30px; /* Add spacing below the heading */
+    background-color: #3B82F6;;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+
+.present {
+    color: green; /* Green color for Present */
+    text-align: center;
+    font-size: 18px;
+}
+
+.absent {
+    color: red; /* Red color for Absent */
+    text-align: center;
+    font-size: 18px;
+}
+.status-header {
+    text-align: center;
+}
+
+
+  /* Mobile Style */
+@media (max-width: 768px) {
+    
+    
+.container {
+    width: 100%;
+    padding: 10px;
+    margin: 0rem;
+    margin-top: 2rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+  }
+  th, td {
+      color: black;
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+  th {
+      color: black;
+      background-color: rgb(228, 228, 228);
+      text-align: left;
+      font-size: 15px;
+      border-radius: 5px;
+  }
+  /* Apply zebra stripes */
+  tr:nth-child(even) {
+      background-color: rgb(232, 232, 232);
+  }
+  /* Add horizontal dividers */
+  tr {
+      border-bottom: 1px solid #ddd;
+  
+  }
+  /* Hover effect 
+  tr:hover {
+      background-color: #eaf1f1;
+  }*/
+  
+  .row-header {
+      color: white; /* Dark blue color */
+      font-size: 15px; /* Adjust font size as needed */
+      margin-top: 5px;
+      margin-bottom: 10px; /* Add spacing below the heading */
+      background-color: #3B82F6;;
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px;
+  }
+  
+  
+  
+  .present {
+      color: green; /* Green color for Present */
+      text-align: center;
+      font-size: 15px;
+  }
+  
+  .absent {
+      color: red; /* Red color for Absent */
+      text-align: center;
+      font-size: 15px;
+  }
+  .status-header {
+      text-align: center;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Fees</title>
+
+     <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu_open" />
+  
+  <!-- New Dashboard CSS -->
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pay_fees_page.css' %}">
+</head>
+<body>
+
+    <!-- Preloader -->
+  <div id="preloader">
+    <div class="waviy">
+      <span style="--i:1">L</span>
+      <span style="--i:2">o</span>
+      <span style="--i:3">a</span>  
+      <span style="--i:4">d</span>
+      <span style="--i:5">i</span>
+      <span style="--i:6">n</span>
+      <span style="--i:7">g</span>
+      <span style="--i:8">.</span>
+      <span style="--i:9">.</span>
+      <span style="--i:10">.</span>
+    </div>
+  </div>
+  
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <h2> Student Dashboard </h2>
+      <ul>
+        <li>
+          <span class="material-icons-sharp">home</span>
+          <a href="{% url 'student_dashboard' %}">Home</a>
+        </li>
+        <li>
+          <span class="material-icons-sharp">today</span>
+          <a href="{% url 'view_timetable' %}">Time Table</a>
+        </li>
+        <li>
+          <span class="material-icons-sharp">grid_view</span>
+          <a href="{% url 'student_attendance' %}">Attendance</a>
+        </li>
+        <li>
+          <span class="material-icons-sharp">password</span>
+          <a href="{% url 'view_marks' %}">Academics</a>
+        </li>
+        <li>
+          <span class="material-icons-sharp">campaign</span>
+          <a href="{% url 'student_announcements' %}">Announcements</a>
+        </li>
+        <li>
+          <span class="material-icons-sharp">payments</span>
+          <a href="{% url 'view_fees' %}">Payments</a>
+        </li>
+      </ul>
+    </aside>
+
+  <!-- Main Content Area -->
+  <main class="content">
+    <!-- Top Navbar -->
+    <div class="hamburger">
+      <button  onclick="toggleSidebar()"><span class="material-symbols-outlined">
+        menu_open
+        </span></button>
+        </div>
+
+      <header class="top-navbar">
+        <div class="nav-left">
+          Dashboard
+        </div>
+        <div class="nav-right">
+          <span class="material-icons-sharp">notifications</span>
+          <span class="user-profile">
+            <img src="{{ MEDIA_URL }}{{ request.user.student.profile_picture.url }}" alt="{{ student_details.name }} Profile">
+          </span>
+        </div>
+      </header>
+
+    <div class="main-container">
+    <h1>Pay Fees for {{ student.name }}</h1>
+
+    {% if miscellaneous_fees or fees_fine != 0 %}
+
+    <p>Total Fees: 
+        {{ student.fee_structure.registration_fees|floatformat:2 }} + 
+        {{ student.fee_structure.academic_fees|floatformat:2 }} + 
+        {{ student.miscellaneous_fees|floatformat:2 }} + 
+        {% if transport_fees %}{{ transport_fees|floatformat:2 }}{% else %}0.00{% endif %} = 
+        {{ student.fee_structure.registration_fees|add:student.fee_structure.academic_fees|add:student.miscellaneous_fees|add:transport_fees|floatformat:2 }}
+     </p>
+     
+
+       {% else %}
+
+       <p>Total Fees: {{ student.fee_structure.registration_fees|floatformat:2 }} + 
+        {{ student.fee_structure.academic_fees|floatformat:2 }}  = {{ student.fee_structure.registration_fees|add:student.fee_structure.academic_fees|floatformat:2 }}</p>
+
+    {% endif %}
+
+    <p>Paid Amount: {{ paid_amount|default:0|floatformat:2 }}</p>
+    <p>Remaining Amount: {% if miscellaneous_fees or fees_fine != 0 %}  {{ remaining_amount|floatformat:2 }} + {{ student.miscellaneous_fees|floatformat:2 }} = {{ remaining_amount|add:student.miscellaneous_fees|floatformat:2 }}   {% endif %}</p>
+
+    {% if hostel_fees %}
+    <p><strong>Hostel Fees:</strong> ₹{{ hostel_fees }}</p>
+    <p>Remaining Amount: {% if miscellaneous_fees or fees_fine != 0 %}  {{ remaining_amount|floatformat:2 }} + {{ student.miscellaneous_fees|floatformat:2 }} + {{ hostel_fees|floatformat:2 }} = {{ remaining_amount|add:student.miscellaneous_fees|add:hostel_fees|floatformat:2 }}   {% endif %}</p>
+{% endif %}
+
+
+
+    {% if remaining_amount > 0 %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="main-form">
+            {{ form.as_p }}
+            </div>
+            <button type="submit">Pay Fees</button>
+        </form>
+    {% else %}
+        <p><strong>All dues are cleared!</strong></p>
+    {% endif %}
+    </div>
+
+
+      {% comment %} Hamburger menu button {% endcomment %}
+      <script>
+        function toggleSidebar() {
+          const sidebar = document.querySelector('.sidebar');
+          sidebar.classList.toggle('active');
+        }
+      </script>
+   
+
+    <!-- Required vendors -->
+    <script src="{% static 'vendor/global/global.min.js' %}"></script>
+    <!-- Student Dashboard Scripts -->
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  
+  
+</body>
+</html>
+
+
+

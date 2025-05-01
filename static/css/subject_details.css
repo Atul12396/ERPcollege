@@ -1,0 +1,108 @@
+
+.paneer {
+    max-width: 1000px;
+    margin: 50px;
+    margin-left: 150px; 
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subject-header {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+    background-color: #3B82F6;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student-list {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+a.btn {
+    color: white; /* White color for text */
+    font-size: 20px;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display as inline-block element */
+    padding: 10px 20px; /* Add padding */
+    background-color: #C73538; /* Blue background color */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+a.btn:hover {
+    background-color: #a52b2e; /* Darker blue background color on hover */
+}
+
+/* Mobile Style */
+
+@media (max-width: 768px) {
+
+    .paneer {
+        width: 100%;
+        margin: 0rem;
+        margin-top: 2rem; 
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .subject-header {
+        color: white;
+        font-size: 15px;
+        margin-bottom: 20px;
+        background-color: #3B82F6;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .student-list {
+        font-size: 15px;
+        color: black;
+        margin-bottom: 10px;
+    }
+    
+    
+    a.btn {
+        color: white; /* White color for text */
+        font-size: 15px;
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Display as inline-block element */
+        padding: 10px 20px; /* Add padding */
+        background-color: #C73538; /* Blue background color */
+        border-radius: 5px; /* Add border radius for rounded corners */
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
+    
+    a.btn:hover {
+        background-color: #a52b2e; /* Darker blue background color on hover */
+    }
+
+
+
+
+
+
+
+}

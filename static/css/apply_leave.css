@@ -1,0 +1,164 @@
+.announce {
+    max-width: 1000px;
+    margin: 50px ;
+    margin-left: 200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+    text-align: center;
+    background-color: #3B82F6;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+
+ 
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.chuha{
+    color:black;
+    margin-top:2px;
+}
+
+#leaveStatusTable{
+    color: black;
+}
+.hh{
+    color: black;
+}
+#table{
+    margin-left: 200px;
+    margin-bottom: 30px;
+
+}
+
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-style: italic;
+}
+
+
+/* Mobile Style */
+
+@media (max-width: 768px) {
+
+    .announce {
+        width: 100%;
+        margin: 0rem;
+        margin-top: 2rem;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    h1 {
+        text-align: center;
+        background-color: #3B82F6;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+    
+    
+    form {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        font-weight: bold;
+    
+     
+    }
+    
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    
+    .chuha{
+        color:black;
+        margin-top:2px;
+    }
+    
+    #leaveStatusTable{
+        color: black;
+    }
+    .hh{
+        color: black;
+    }
+    #table{
+        margin-left: 200px;
+        margin-bottom: 30px;
+    
+    }
+    
+    
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        margin-top: 20px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+    .error-message {
+        color: red;
+        font-style: italic;
+    }
+    
+
+
+
+
+}
